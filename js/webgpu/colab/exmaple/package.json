@@ -1,0 +1,25 @@
+{
+    "name": "wgsl-utils",
+    "version": "0.1.0",
+    "type": "module",
+    "private": true,
+    "exports": {
+        ".": "./dist/exports/index.js"
+    },
+    "types": "./dist/exports/bundle.d.ts",
+    "scripts": {
+        "e": "node ./dist/example/2.js",
+        "dev": "npm run build  && npm run e",
+        "clean": "rimraf dist",
+        "build": "npm run clean && tsc && rollup -c &&  node ../../scripts/esbuild.js && npm run build-wgsl",
+        "build-wgsl": "node ./scripts/build.js"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.3",
+        "@webgpu/types": "^0.1.60",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "webgpu": "^0.2.12"
+    }
+}

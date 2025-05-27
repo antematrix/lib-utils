@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "ESNext", // 指定 ECMAScript 目标版本
+        "module": "ESNext", // 指定模块代码生成方式
+        "moduleResolution": "node",
+        "strict": true, // 启用所有严格类型检查选项
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true, // 支持导入 .mjs 的默认导出
+        "esModuleInterop": true, // 允许默认导入非 ES 模块
+        "skipLibCheck": true, // 跳过库文件的类型检查
+        "forceConsistentCasingInFileNames": true, // 强制文件名保持一致性
+        "allowJs": true, // 如果有 JS 文件也需要一起编译
+        "jsx": "react", // 设置 JSX 支持
+        "declaration": true,
+        //"declarationDir": "./dist/types", // 声明文件的输出目录
+        //"types": ["./src/types/global.d.ts"]
+        "lib": ["ES2022", "DOM"], // 添加 WebGPU 类型支持
+        "types": ["node", "@webgpu/types"],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "baseUrl": "./",
+        "paths": {
+            "@common-utils": ["src/index.ts"]
+        }
+    },
+    //"include": ["src/example/**/*"], // 包含的文件夹
+    "exclude": ["dist", "./*.js", "./wgsl/*", "**/*/build.js"] // 排除的文件夹
+}
